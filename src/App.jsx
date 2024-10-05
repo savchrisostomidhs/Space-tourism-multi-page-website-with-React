@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Destination" element={<Destination />} />
-        <Route path="/Crew" element={<Crew />} />
-        <Route path="/Technology" element={<Technology />} />
+        <Route path="/Space-tourism-multi-page-website-with-React/" element={<Home />} />
+        <Route path="/Space-tourism-multi-page-website-with-React/Destination" element={<Destination />} />
+        <Route path="/Space-tourism-multi-page-website-with-React/Crew" element={<Crew />} />
+        <Route path="/Space-tourism-multi-page-website-with-React/Technology" element={<Technology />} />
       </Routes>
     </>
   )

@@ -18,7 +18,7 @@ function Home() {
                             </p>
                         </div>
                         <div className="explore">
-                            <Link to={"/Destination"}><div className="preset-4 circle">Explore</div></Link>
+                            <Link to={"/Space-tourism-multi-page-website-with-React/Destination"}><div className="preset-4 circle">Explore</div></Link>
                         </div>
                     </div>
                 </div>

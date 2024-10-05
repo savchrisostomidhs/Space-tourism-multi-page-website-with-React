@@ -47,7 +47,7 @@ function Header({ home, des, crew, tech }) {
         <header>
             <div className="header-wrapper">
                 <div className="logo">
-                    <Link to={"/"}><img src={logo} alt="logo" /></Link>
+                    <Link to={"/Space-tourism-multi-page-website-with-React/"}><img src={logo} alt="logo" /></Link>
                     <div className="line"></div>
                 </div>
                 <div className="burger">
@@ -56,10 +56,10 @@ function Header({ home, des, crew, tech }) {
                 </div>
                 <nav>
                     <ul>
-                        <li><Link className={(home ? "active" : "") + " preset-8"} to={"/"}><span>00</span> Home</Link></li>
-                        <li><Link className={(des ? "active" : "") + " preset-8"} to={"/Destination"}><span>01</span> Destination</Link></li>
-                        <li><Link className={(crew ? "active" : "") + " preset-8"} to={"/Crew"}><span>02</span> Crew</Link></li>
-                        <li><Link className={(tech ? "active" : "") + " preset-8"} to={"/Technology"}><span>03</span> Technology</Link></li>
+                        <li><Link className={(home ? "active" : "") + " preset-8"} to={"/Space-tourism-multi-page-website-with-React/"}><span>00</span> Home</Link></li>
+                        <li><Link className={(des ? "active" : "") + " preset-8"} to={"/Space-tourism-multi-page-website-with-React/Destination"}><span>01</span> Destination</Link></li>
+                        <li><Link className={(crew ? "active" : "") + " preset-8"} to={"/Space-tourism-multi-page-website-with-React/Crew"}><span>02</span> Crew</Link></li>
+                        <li><Link className={(tech ? "active" : "") + " preset-8"} to={"/Space-tourism-multi-page-website-with-React/Technology"}><span>03</span> Technology</Link></li>
                     </ul>
                 </nav>
             </div>
