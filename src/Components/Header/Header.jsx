@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import logo from "./../../../public/assets/shared/logo.svg"
-import hamburger from "./../../../public/assets/shared/icon-hamburger.svg"
-import close from "./../../../public/assets/shared/icon-close.svg"
+import logo from "./../../assets/shared/logo.svg"
+import hamburger from "./../../assets/shared/icon-hamburger.svg"
+import close from "./../../assets/shared/icon-close.svg"
 import "./Header.css"
 
 function Header({ home, des, crew, tech }) {

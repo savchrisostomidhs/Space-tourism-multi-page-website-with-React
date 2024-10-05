@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./../../Components/Header"
 import data from "./../../data.json"
+import launchLand from "./../../assets/technology/image-launch-vehicle-landscape.jpg"
+import launchPort from "./../../assets/technology/image-launch-vehicle-portrait.jpg"
+import spaceLand from "./../../assets/technology/image-space-capsule-landscape.jpg"
+import spacePort from "./../../assets/technology/image-space-capsule-portrait.jpg"
+import spaceportLand from "./../../assets/technology/image-spaceport-landscape.jpg"
+import spaceportPort from "./../../assets/technology/image-spaceport-portrait.jpg"
 import "./Technology.css"
 
 function Technology() {
-    const technology = data.technology;
-    const [tech, setTech] = useState(technology[0]);
+    const maxHeight = window.matchMedia("(max-height: 924px) or (max-width: 790px)");
 
-    const handelClick = (e) => {
+    const [number, setNumber] = useState(0);
+
+    const imageLandscape = [launchLand, spaceportLand, spaceLand];
+    const imagesPortrait = [launchPort, spacePort, spaceportPort];
+    const [image, setImage] = useState(maxHeight.matches ? imageLandscape[number] : imagesPortrait[number]);
+
+    const technology = data.technology;
+    const [tech, setTech] = useState(technology[number]);
+
+    const handleClick = (e) => {
         const techDots = document.querySelectorAll("div.technology-dots .tech-dot");
         techDots.forEach(techDot => {
             if (techDot.classList.contains("active-tech-dot")) {
@@ -15,21 +29,18 @@ function Technology() {
             }
         });
 
-        setTech(technology[e.target.innerHTML - 1]);
+        setNumber(e.target.innerHTML - 1);
         techDots[e.target.innerHTML - 1].classList.add("active-tech-dot");
     }
 
-    const maxHeight = window.matchMedia("(max-height: 924px) or (max-width: 790px)");
+    useEffect(() => {
+        setImage(maxHeight.matches ? imageLandscape[number] : imagesPortrait[number]);
+        setTech(technology[number]);
+    }, [number]);
 
     window.addEventListener("load", () => {
         window.addEventListener("resize", () => {
-            const image = document.querySelector(".technology-image img")
-
-            if (maxHeight.matches) {
-                image.src = new URL(tech.images.landscape, import.meta.url).href;
-            } else {
-                image.src = new URL(tech.images.portrait, import.meta.url).href;
-            }
+            
         });
     });
 
@@ -42,9 +53,9 @@ function Technology() {
                     <div className="technology-content">
                         <div className="technology-explanation">
                             <div className="technology-dots">
-                                <div className="active-tech-dot preset-4 tech-dot tech-dot-1" onClick={handelClick}>1</div>
-                                <div className="preset-4 tech-dot tech-dot-2" onClick={handelClick}>2</div>
-                                <div className="preset-4 tech-dot tech-dot-3" onClick={handelClick}>3</div>
+                                <div className="active-tech-dot preset-4 tech-dot tech-dot-1" onClick={handleClick}>1</div>
+                                <div className="preset-4 tech-dot tech-dot-2" onClick={handleClick}>2</div>
+                                <div className="preset-4 tech-dot tech-dot-3" onClick={handleClick}>3</div>
                             </div>
                             <div className="technology-text">
                                 <div className="technology-name">
@@ -55,7 +66,7 @@ function Technology() {
                             </div>
                         </div>
                         <div className="technology-image">
-                            <img src={new URL(maxHeight.matches ? tech.images.landscape : tech.images.portrait, import.meta.url).href} alt={tech.name} />
+                            <img src={image} alt={tech.name} />
                         </div>
                     </div>
                 </div>

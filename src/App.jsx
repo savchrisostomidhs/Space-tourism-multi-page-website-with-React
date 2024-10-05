@@ -12,6 +12,7 @@ function App() {
         <Route path="/Space-tourism-multi-page-website-with-React/Destination" element={<Destination />} />
         <Route path="/Space-tourism-multi-page-website-with-React/Crew" element={<Crew />} />
         <Route path="/Space-tourism-multi-page-website-with-React/Technology" element={<Technology />} />
+        <Route path="/Space-tourism-multi-page-website-with-React/*" element={<Home />} />
       </Routes>
     </>
   )

@@ -1,9 +1,21 @@
 import { useState } from "react";
 import Header from "../../Components/Header"
 import data from "./../../data.json"
+import anoushehPNG from "./../../assets/crew/image-anousheh-ansari.png"
+import anoushehWEBP from "./../../assets/crew/image-anousheh-ansari.webp"
+import douglasPNG from "./../../assets/crew/image-douglas-hurley.png"
+import douglasWEBP from "./../../assets/crew/image-douglas-hurley.webp"
+import markPNG from "./../../assets/crew/image-mark-shuttleworth.png"
+import markWEBP from "./../../assets/crew/image-mark-shuttleworth.webp"
+import victorPNG from "./../../assets/crew/image-victor-glover.png"
+import victorWEBP from "./../../assets/crew/image-victor-glover.webp"
 import "./Crew.css"
 
 function Crew() {
+    const imagesPNG = [douglasPNG, markPNG, victorPNG, anoushehPNG];
+    const imagesWEBP = [douglasWEBP, markWEBP, victorWEBP, anoushehWEBP];
+    const [image, setImage] = useState(imagesPNG[0]);
+
     const crew = data.crew;
     const [member, setMember] = useState(crew[0]);
 
@@ -15,6 +27,7 @@ function Crew() {
             }
         });
 
+        setImage(imagesPNG[e.target.innerHTML]);
         setMember(crew[e.target.innerHTML]);
         dots[e.target.innerHTML].classList.add("active-dot");
     };
@@ -42,7 +55,7 @@ function Crew() {
                             </div>
                         </div>
                         <div className="crew-image">
-                            <img src={new URL(member.images.png, import.meta.url).href} alt={member.name} />
+                            <img src={image} alt={member.name} />
                         </div>
                     </div>
                 </div>

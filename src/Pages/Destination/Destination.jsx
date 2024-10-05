@@ -1,9 +1,21 @@
 import { useState } from "react";
 import Header from "../../Components/Header"
 import data from "./../../data.json"
+import europaPNG from "./../../assets/destination/image-europa.png"
+import europaWEBP from "./../../assets/destination/image-europa.webp"
+import marsPNG from "./../../assets/destination/image-mars.png"
+import marsWEBP from "./../../assets/destination/image-mars.webp"
+import moonPNG from "./../../assets/destination/image-moon.png"
+import moonWEBP from "./../../assets/destination/image-moon.webp"
+import titanPNG from "./../../assets/destination/image-titan.png"
+import titanWEBP from "./../../assets/destination/image-titan.webp"
 import "./Destination.css"
 
 function Destination() {
+    const imagesPNG = [moonPNG, marsPNG, europaPNG, titanPNG,];
+    const imagesWEBP = [moonWEBP, marsWEBP, europaWEBP, titanWEBP];
+    const [image, setImage] = useState(imagesPNG[0]);
+
     const destinations = data.destinations;
     const [destination, setDestination] = useState(destinations[0]);
 
@@ -17,6 +29,7 @@ function Destination() {
 
         destinations.forEach((_, i) => {
             if (e.target.innerHTML === destinations[i].name) {
+                setImage(imagesPNG[i]);
                 setDestination(destinations[i]);
                 listItems[i].classList.add("des-active");
             }
@@ -31,7 +44,7 @@ function Destination() {
                     <h1 className="preset-5 title"><span>01</span> Pick your destination</h1>
                     <div className="destination-content">
                         <div className="destination-image">
-                            <img src={new URL(destination.images.png, import.meta.url).href} alt={destination.name} />
+                            <img src={image} alt={destination.name} />
                         </div>
                         <div className="destination-explanation">
                             <div className="des-expl-cont">
