@@ -1,5 +1,5 @@
 div.destination {
-    background: url(./../../assets/destination/background-destination-desktop.jpg) no-repeat;
+    background: url(./../../../public/assets/destination/background-destination-desktop.jpg) no-repeat;
     background-size: 100% 100%;
     color: hsl(0, 0%, 100%);
     display: flex;
@@ -207,14 +207,14 @@ div.travel-time {
 
 @media (max-width: 768px) {
     div.destination {
-        background: url(./../../assets/destination/background-destination-tablet.jpg) no-repeat;
+        background: url(./../../../public/assets/destination/background-destination-tablet.jpg) no-repeat;
         background-size: 100% 100%;
     }
 }
 
 @media (max-width: 375px) {
     div.destination {
-        background: url(./../../assets/destination/background-destination-mobile.jpg) no-repeat;
+        background: url(./../../../public/assets/destination/background-destination-mobile.jpg) no-repeat;
         background-size: 100% 100%;
     }
 }
