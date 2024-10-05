@@ -210,6 +210,25 @@ div.travel-time {
     }
 }
 
+@media (max-width: 500px) {
+    div.destination-container {
+        gap: 30px;
+    }
+
+    div.destination-content {
+        gap: 30px;
+    }
+
+    div.des-expl-cont {
+        text-align: center;
+        align-items: center;
+        gap: 24px;
+        height: 100%;
+        width: 94%;
+    }
+
+}
+
 @media (max-width: 375px) {
     div.destination {
         background: url(./../../assets/destination/background-destination-mobile.jpg) no-repeat;
