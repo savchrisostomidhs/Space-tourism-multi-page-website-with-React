@@ -59,7 +59,7 @@ function Technology() {
                             </div>
                             <div className="technology-text">
                                 <div className="technology-name">
-                                    <p className="preset-4">The terminology...</p>
+                                    <p className="preset-4 term">The terminology...</p>
                                     <p className="preset-3">{tech.name}</p>
                                 </div>
                                 <p className="preset-9">{tech.description}</p>
